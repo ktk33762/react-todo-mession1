@@ -16,9 +16,15 @@ function App() {
         e.preventDefault()
         const form = e.target
 
+        if (!form.todo.value.trim()) {
+            // input이 비어있거나 공백만 있을 때 실행
+            alert('할일을 입력해주세요!')
+            return
+        }
+
         setTodos([...todos, { id: nextId, todo: form.todo.value, completed: false }])
         setNextId(nextId + 1)
-        form.reset() // 폼 입력후 입력창 초기화
+        form.reset()
     }
 
     const removeTodo = (seletedId) => {
