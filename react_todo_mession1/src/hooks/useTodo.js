@@ -38,6 +38,13 @@ export default function useTodo() {
             alert('할일을 입력해주세요!')
             return
         }
+        // 시도 결과 length 미사용시 빈 배열에도 alert이 뜨는 문제 발생 -> length 사용하여 해결
+        const isDuplicate = todos.filter((todo) => todo.todo === form.todo.value.trim()).length > 0
+
+        if (isDuplicate) {
+            alert('이미 등록된 할일입니다!')
+            return
+        }
 
         setTodos([...todos, { id: nextId, todo: form.todo.value, completed: false }])
         setNextId(nextId + 1)
