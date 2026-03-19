@@ -1,6 +1,6 @@
 function TodoForm({ onSubmit }) {
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="todo-form">
             <input type="text" name="todo" />
             <button type="submit">등록</button>
         </form>
