@@ -7,11 +7,12 @@ function App() {
     const { todos, handleOnSubmit, removeTodo, toggleTodo } = useTodo()
 
     return (
-        <>
+        <div style={{ width: '100%', maxWidth: '600px' }}>
+            <h1>Todo List</h1>
             <TodoForm onSubmit={handleOnSubmit} />
             <TodoStats todos={todos} />
             <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} />
-        </>
+        </div>
     )
 }
 
